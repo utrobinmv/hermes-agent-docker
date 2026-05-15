@@ -84,6 +84,10 @@ RUN .venv/bin/pip install -e ".[messaging]"
 #RUN python3 -m venv .venv && \
 #    .venv/bin/pip install --no-cache-dir -e ".[all]"
 
+
+# ---------- ADD UTILS -----------
+RUN apt-get update && apt-get install -y wget chromium
+
 # ---------- Runtime ----------
 ENV HERMES_WEB_DIST=/opt/hermes/hermes_cli/web_dist
 ENV HERMES_HOME=/opt/data
